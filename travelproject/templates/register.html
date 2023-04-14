@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* more styles added to beautify the input fields */
+input {
+  margin: 0.25em 0em 1em 0em;
+  outline: none;
+  padding: 0.5em;
+  border: none;
+  background-color: rgb(225, 225, 225);
+  border-radius: 0.25em;
+  color: black;
+}
+/* styles for button */
+button {
+  padding: 0.75em;
+  border: none;
+  outline: none;
+  background-color: rgb(68, 18, 232);
+  color: white;
+  border-radius: 0.25em;
+}
+
+/* hover functionality for button */
+button:hover {
+  cursor: pointer;
+  background-color: rgb(41, 4, 164);
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form action="register" method="post">
+     {% csrf_token %}
+      <!-- class named "container" is assigned to div -->
+     <fieldset>
+     <div class="container">
+        <h1>Register Form</h1>
+
+        <label for="username"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="username"
+          id="username"
+          required
+        /><br>
+
+        <label for="first_name"><b>First Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter first name"
+          name="first_name"
+          id="first_name"
+          required
+        /><br>
+
+        <label for="last_name"><b>Last Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter last name"
+          name="last_name"
+          id="last_name"
+          required
+        /><br>
+
+
+        <label for="email"><b>Email</b></label>
+        <input
+          type="email"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        /><br>
+
+        <label for="pwd"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          id="pwd"
+          required
+        /><br>
+
+        <label for="pwd-repeat"><b>Confirm Password</b></label>
+        <input
+          type="password"
+          placeholder="confirm password"
+          name="password1"
+          id="pwd-repeat"
+          required
+        /><br>
+
+
+        <button type="submit">Register</button>
+      </div>
+       </fieldset>
+
+
+    </form>
+{% for msg in messages %}
+<h1>{{msg}}</h1>
+{% endfor %}
+
+</body>
+</html>
